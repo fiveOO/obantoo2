@@ -114,21 +114,6 @@ public class TestIBAN
   }
 
   @Test
-  public void regel000300()
-  {
-    try
-    {
-      IBAN iban = new IBAN("6161604670", "51010800", "DE");
-      assertEquals(IBANCode.IBANBERECHNUNGNICHTMOEGLICH, iban.getCode());
-    }
-    catch (SEPAException e)
-    {
-      System.out.println(e.getFehler());
-      fail();
-    }
-  }
-
-  @Test
   public void regel000400()
   {
     try
@@ -1571,36 +1556,6 @@ public class TestIBAN
     {
       IBAN iban = new IBAN("1234567890", "62220000", "DE");
       assertEquals("DE96500604000000011404", iban.getIBAN());
-    }
-    catch (SEPAException e)
-    {
-      e.printStackTrace();
-      fail();
-    }
-  }
-
-  @Test
-  public void regel004300_01()
-  {
-    try
-    {
-      IBAN iban = new IBAN("868", "60651070", "DE");
-      assertEquals("DE49666500850000000868", iban.getIBAN());
-    }
-    catch (SEPAException e)
-    {
-      e.printStackTrace();
-      fail();
-    }
-  }
-
-  @Test
-  public void regel004300_02()
-  {
-    try
-    {
-      IBAN iban = new IBAN("12602", "60651070", "DE");
-      assertEquals("DE33666500850000012602", iban.getIBAN());
     }
     catch (SEPAException e)
     {
